@@ -2,6 +2,14 @@
 	"name": "@heiwa4126/vite-plugin-minify-html",
 	"version": "0.0.1-alpha.1",
 	"description": "Vite plugin to minify index.html and inline scripts (including importmap JSON).",
+	"keywords": [
+		"html",
+		"minify",
+		"plugin",
+		"rolldown",
+		"vite",
+		"vite8"
+	],
 	"homepage": "https://github.com/heiwa4126/vite-plugin-minify-html#readme",
 	"bugs": {
 		"url": "https://github.com/heiwa4126/vite-plugin-minify-html/issues"
