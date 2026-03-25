@@ -1,0 +1,65 @@
+{
+	"name": "@heiwa4126/vite-plugin-minify-html",
+	"version": "0.0.1-alpha.1",
+	"description": "Vite plugin to minify index.html and inline scripts (including importmap JSON).",
+	"homepage": "https://github.com/heiwa4126/vite-plugin-minify-html#readme",
+	"bugs": {
+		"url": "https://github.com/heiwa4126/vite-plugin-minify-html/issues"
+	},
+	"license": "MIT",
+	"author": "heiwa4126 <heiwa4126@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/heiwa4126/vite-plugin-minify-html.git"
+	},
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"preinstall": "pnpm audit",
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"clean": "rm -rf dist",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"format": "oxfmt",
+		"lint": "pnpm pkg fix --loglevel=error && oxlint",
+		"check": "oxfmt && oxlint --fix",
+		"prepublishOnly": "run-s lint test clean build",
+		"prepack": "clean-publish-scripts -c",
+		"postpack": "clean-publish-scripts -r"
+	},
+	"dependencies": {
+		"html-minifier-terser": "^7.2.0",
+		"terser": "^5.46.1"
+	},
+	"devDependencies": {
+		"@heiwa4126/clean-publish-scripts": "^0.0.5",
+		"@types/html-minifier-terser": "^7.0.2",
+		"npm-run-all2": "^8.0.4",
+		"oxfmt": "^0.41.0",
+		"oxlint": "^1.56.0",
+		"tsdown": "^0.21.4",
+		"typescript": "^6.0.2",
+		"vite": "^8.0.2",
+		"vitest": "^4.1.1"
+	},
+	"peerDependencies": {
+		"vite": ">=5"
+	}
+}
