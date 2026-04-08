@@ -1,6 +1,6 @@
 {
 	"name": "@heiwa4126/vite-plugin-minify-html",
-	"version": "0.0.2-rc.0",
+	"version": "0.0.2",
 	"description": "Vite plugin to minify index.html and inline scripts (including importmap JSON).",
 	"keywords": [
 		"html",
