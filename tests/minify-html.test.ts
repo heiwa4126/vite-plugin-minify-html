@@ -2,15 +2,15 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { minifyMock, terserMinifyMock } = vi.hoisted(() => ({
 	minifyMock: vi.fn(),
-	terserMinifyMock: vi.fn(),
+	terserMinifyMock: vi.fn()
 }));
 
 vi.mock("html-minifier-terser", () => ({
-	minify: minifyMock,
+	minify: minifyMock
 }));
 
 vi.mock("terser", () => ({
-	minify: terserMinifyMock,
+	minify: terserMinifyMock
 }));
 
 import { minifyHtml } from "../src/index";
@@ -46,8 +46,8 @@ describe("minifyHtml", () => {
 				collapseWhitespace: true,
 				removeComments: true,
 				minifyCSS: true,
-				processScripts: ["importmap"],
-			}),
+				processScripts: ["importmap"]
+			})
 		);
 	});
 
@@ -72,7 +72,7 @@ describe("minifyHtml", () => {
 
 		const transform = minifyHtml({
 			dropConsole: false,
-			dropDebugger: false,
+			dropDebugger: false
 		}).transformIndexHtml as TransformIndexHtml;
 		await transform.handler("<html></html>");
 
@@ -87,9 +87,9 @@ describe("minifyHtml", () => {
 		expect(terserMinifyMock).toHaveBeenCalledWith(source, {
 			compress: {
 				drop_console: false,
-				drop_debugger: false,
+				drop_debugger: false
 			},
-			mangle: true,
+			mangle: true
 		});
 	});
 

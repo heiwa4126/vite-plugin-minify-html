@@ -28,14 +28,14 @@ export function minifyHtml(options: MinifyHtmlOptions = {}): Plugin {
 							const result = await terserMinify(code, {
 								compress: {
 									drop_console: dropConsole,
-									drop_debugger: dropDebugger,
+									drop_debugger: dropDebugger
 								},
-								mangle: true,
+								mangle: true
 							});
 							return result.code ?? code;
 						}
-					},
-				}),
-		},
+					}
+				})
+		}
 	};
 }

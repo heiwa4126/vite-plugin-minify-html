@@ -26,7 +26,7 @@ import react from "@vitejs/plugin-react";
 import { minifyHtml } from "@heiwa4126/vite-plugin-minify-html";
 
 export default defineConfig({
-	plugins: [react(), minifyHtml()],
+	plugins: [react(), minifyHtml()]
 });
 ```
 
